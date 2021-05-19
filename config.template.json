@@ -1,0 +1,39 @@
+{
+    // Configuration for Tournament Manager
+    "tm": {
+        "address": "127.0.0.1", // The address of the Tournament Manager Computer
+        "password": "" // The event password (admin password)
+    },
+    // OBS Websocket Credentials. OBS must be running on the same computer, to allow us to access
+    // recordings for automatic upload
+    "obs": {
+        "enable": true, // Whether to control OBS through its websocket
+        "address": "127.0.0.1:4444", // Address of OBS
+        "fieldset": "Competition",
+        "mappings": { // Map each field in the fieldset to a scene in OBS
+            "Field A": "Main",
+            "Field B": "Main",
+            "Field C": "Main"
+        },
+        "record": { // Whether to individually start and stop recording for matches as they are scored in tournament manager
+            "enable": true,
+            "template": "$EVENT - $MATCH - $TEAMS - $SCORE"
+            // $EVENT is event name
+            // $MATCH is the match label (like Q18, or SF1-1)
+            // $TEAMS includes a list of the teams that competed in that match. For VRC this will
+            //  look like RED_1 RED_2 vs BLUE_1 BLUE_2, and for IQ it will look like TEAM_1 TEAM_2
+            // $SCORE is the final score of the match, for VRC it looks like RED to BLUE
+        }
+    },
+    // ATEM Software Control, whether to switch scenes 
+    "atem": {
+        "enable": true,
+        "address": "127.0.0.1", // Address of the ATEM video switcher
+        "fieldset": "Competition", // The fieldset to use. Note, if the event has only 1 fielset, it will use that fieldset regardless of this setting
+        "mappings": { // Map each field in the fieldset to a scene on the switcher (1-4 for the Blackmagic ATEM mini)
+            "Field A": 1,
+            "Field B": 2,
+            "Field C": 3
+        }
+    }
+}
