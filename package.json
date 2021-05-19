@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/MayorMonty/compo/issues"
   },
-  "homepage": "https://github.com/MayorMonty/compo#readme"
+  "homepage": "https://github.com/MayorMonty/compo#readme",
+  "dependencies": {
+    "atem-connection": "^2.2.2",
+    "hjson": "^3.2.2",
+    "obs-websocket-js": "^4.0.2",
+    "vex-tm-client": "^0.0.1"
+  }
 }
